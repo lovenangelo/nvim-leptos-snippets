@@ -56,6 +56,26 @@ use {
 | `lnoderef` | NodeRef |
 | `llazy` | Lazy component |
 
+## Navigation
+
+Add this keybindings in your configuration if navigation doesn't work
+
+```
+vim.keymap.set({ 'i', 's' }, '<Tab>', function()
+  if require('luasnip').jumpable(1) then
+    require('luasnip').jump(1)
+  else
+    return '<Tab>'
+  end
+end, { expr = true, silent = true })
+
+vim.keymap.set({ 'i', 's' }, '<S-Tab>', function()
+  if require('luasnip').jumpable(-1) then
+    require('luasnip').jump(-1)
+  end
+end, { silent = true })
+
+```
 ## Requirements
 
 - Neovim >= 0.9
