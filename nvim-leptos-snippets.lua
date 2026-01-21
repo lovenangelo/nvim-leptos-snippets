@@ -5,9 +5,14 @@ local i = ls.insert_node
 local f = ls.function_node
 local c = ls.choice_node
 
+function header()
+  return t { 'use leptos::prelude::*;', '', '' }
+end
+
 ls.add_snippets('rust', {
   -- Component
   s({ trig = 'lcomponent', name = 'Component', dscr = 'Leptos Component' }, {
+    header(),
     t '#[component]',
     t { '', 'pub fn ' },
     i(1, 'ComponentName'),
@@ -21,6 +26,7 @@ ls.add_snippets('rust', {
 
   -- Component with props
   s({ trig = 'lcompprops', name = 'Component with Props', dscr = 'Leptos Component with properties' }, {
+    header(),
     t '#[component]',
     t { '', 'pub fn ' },
     i(1, 'ComponentName'),
@@ -87,6 +93,7 @@ ls.add_snippets('rust', {
 
   -- Server function
   s({ trig = 'lserver', name = 'Server Function', dscr = 'Create a server function' }, {
+    header(),
     t '#[server]',
     t { '', 'pub async fn ' },
     i(1, 'function_name'),
@@ -216,6 +223,7 @@ ls.add_snippets('rust', {
 
   -- Lazy component (for code splitting)
   s({ trig = 'llazy', name = 'Lazy Component', dscr = 'Lazy-loaded component for code splitting' }, {
+    header(),
     t '#[lazy]',
     t { '', '#[component]' },
     t { '', 'pub fn ' },
