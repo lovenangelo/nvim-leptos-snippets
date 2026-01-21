@@ -58,7 +58,7 @@ use {
 
 ## Navigation
 
-Add this keybindings in your configuration if navigation doesn't work
+Add these keybindings in your configuration if navigation doesn't work during input
 
 ```
 vim.keymap.set({ 'i', 's' }, '<Tab>', function()
