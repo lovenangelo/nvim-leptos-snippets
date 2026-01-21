@@ -64,19 +64,3 @@ use {
 ## License
 
 MIT
-```
-
-## How to Publish
-
-**Yes, it's totally publishable!** Here's how:
-
-### 1. **Prepare Your Repository**
-
-Your repo structure should be:
-```
-nvim-leptos-snippets/
-├── lua/
-│   └── snippets/
-│       └── nvim-leptos-snippets.lua
-├── README.md
-└── LICENSE
