@@ -3,9 +3,9 @@ local s = ls.snippet
 local t = ls.text_node
 local i = ls.insert_node
 local f = ls.function_node
-local c = ls.choice_node
+-- local c = ls.choice_node
 
-function header()
+local function header()
   return t { 'use leptos::prelude::*;', '', '' }
 end
 
@@ -40,6 +40,13 @@ ls.add_snippets('rust', {
     i(0),
     t { '', '    }' },
     t { '', '}' },
+  }),
+
+  -- Default props
+  s({ trig = 'ldefaultprop', name = 'Prop default value', dscr = 'Setting default value to a prop' }, {
+    t '#[prop(default = ',
+    i(1, 'value'),
+    t ')]',
   }),
 
   -- Signal
